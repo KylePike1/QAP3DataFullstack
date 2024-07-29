@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Item</title>
+</head>
+<body>
+    <div id="main_content_zone">
+        <h1>Item ID: <%=menu_items.item_id %> </h1>
+        <form method="post">
+            <label for="item_id"> Item ID: </label>
+            <input type ="text" id="item_id" name="item_id" value="<%=menu_items.item_id%>"></input>
+            <br>
+            <label for="item_name"> Item Name: </label>
+            <input type ="text" id="item_name" name="item_name" value="<%=menu_items.item_id%>"></input>
+            <br>
+            <label for="price"> Price: </label>
+            <input type ="text" id="price" name="price" value="<%=menu_items.price%>"></input>
+            <br>
+            <input type = "submit">
+        </form>
+    </div>
+</body>
+</html>

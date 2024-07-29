@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Item Page</title>
+</head>
+<body>
+  <div id="main_content_zone">
+    <table>
+        <tr>
+            <th>Item ID</th>
+            <th>Item Name</th>
+            <th>Price</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        <%
+            var itemTable=``; 
+            menu_items.forEach(item => {
+                itemTable += `<tr> <td> ${menu_items.item_id} </td> <td> ${menu_items.item_name} </td> <td> ${menu_items.price} </td> <td> <a href="/items/edit/${menu_items.item_id}"> EDIT </a> </td> <td> <a href="/items/delete/${menu_items.item_id}"> DELETE </a> </td> </tr>`
+            });
+        %>
+        <%- itemTable %>
+    </table>
+    <a class = "button_link" href="/items/add">
+        <div class="button">
+            <p class="button_text">Add New Item</p>    
+        </div>
+    </a>
+</div>
+
+  
+</body>
+</html>

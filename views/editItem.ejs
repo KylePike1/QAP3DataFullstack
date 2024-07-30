@@ -6,17 +6,18 @@
     <title>Edit Item</title>
 </head>
 <body>
+    <%- include ('./components/navbar.ejs') %>
     <div id="main_content_zone">
-        <h1>Item ID: <%=menu_items.item_id %> </h1>
+        <h1>Item ID: <%=item.item_id %> </h1>
         <form method="post">
             <label for="item_id"> Item ID: </label>
-            <input type ="text" id="item_id" name="item_id" value="<%=menu_items.item_id%>"></input>
+            <input type ="text" id="item_id" name="item_id" value="<%=item.item_id%>"></input>
             <br>
             <label for="item_name"> Item Name: </label>
-            <input type ="text" id="item_name" name="item_name" value="<%=menu_items.item_id%>"></input>
+            <input type ="text" id="item_name" name="item_name" value="<%=item.item_id%>"></input>
             <br>
             <label for="price"> Price: </label>
-            <input type ="text" id="price" name="price" value="<%=menu_items.price%>"></input>
+            <input type ="text" id="price" name="price" value="<%=item.price%>"></input>
             <br>
             <input type = "submit">
         </form>

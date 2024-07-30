@@ -1,0 +1,9 @@
+1.This project took me about 20 hours to complete.
+
+2. i used chatgpt, youtube , and stack overflow to help me.
+
+3.I did not ask any friends.
+
+4. I asked the help of my tutor Scott, we had 4 sessions for the Project.
+
+5.creating database:1/10, attaching database: 8/10, creating api:4/10, creating ui 6/10.

@@ -19,7 +19,7 @@ const getItems = function() {
 const getItemById = function(itemId){
     if(DEBUG) console.log("menu_items-dal getItemById()");
     return new Promise(function(resolve, reject) {
-        const sql = "SELECT * FROM MENU_ITEMS WHERE item_id = $1 AND archived != true"
+        const sql = "SELECT * FROM MENU_ITEMS WHERE item_id = $1;"
         dal.query(sql, [itemId], (err, result) => {
             if (err) {
                 if(DEBUG) console.log(err);
@@ -35,7 +35,7 @@ const getItemById = function(itemId){
 const addNewItem = function(item_id, item_name, price){
     if(DEBUG) console.log("menu_items-dal addNewBook(params)");
     return new Promise(function(resolve, reject) {
-        const sql = "INSERT INTO MENU_ITEMS (item_id, item_name, price) VALUES ($1, $2, $3)";
+        const sql = "INSERT INTO MENU_ITEMS (item_id, item_name, price) VALUES ($1, $2, $3);";
         dal.query(sql, [item_id, item_name, price], (err, result) => {
             if (err) {
                 if(DEBUG) console.log(err);
@@ -48,11 +48,11 @@ const addNewItem = function(item_id, item_name, price){
     }); 
 }
 
-const editItem = function(item_id, item_name, price, id){
+const editItem = function(item_id, item_name, price){
     if(DEBUG) console.log("menu_items-dal editItem(params)");
     return new Promise(function(resolve, reject) {
-        const sql = "UPDATE MENU_ITEMS SET item_id = $1, item_name = $2, price = $3 WHERE item_id = $4;";
-        dal.query(sql, [item_id, item_name, price, id], (err, result) => {
+        const sql = "UPDATE MENU_ITEMS SET item_name = $2, price = $3 WHERE item_id = $1;";
+        dal.query(sql, [item_id, item_name, price], (err, result) => {
             if (err) {
                 if(DEBUG) console.log(err);
                 reject(err);
@@ -67,14 +67,14 @@ const editItem = function(item_id, item_name, price, id){
 const deleteItem = function(itemId){
     if(DEBUG) console.log("menu_items-dal deleteItem(itemId)");
     return new Promise(function(resolve, reject) {
-        const sql = "UPDATE MENU_ITEMS SET archived = true WHERE item_id = $1"
+        const sql = "DELETE FROM MENU_ITEMS WHERE item_id = $1;"
         dal.query(sql, [itemId], (err, result) => {
             if (err) {
                 if(DEBUG) console.log(err);
                 reject(err);
             } else {
                 if(DEBUG) console.log(result);
-                resolve("Operation Complete - Book has been archived/deleted");
+                resolve("Item has been deleted");
             }
         }); 
     }); 

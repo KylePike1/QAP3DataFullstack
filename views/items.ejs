@@ -6,6 +6,7 @@
   <title>Item Page</title>
 </head>
 <body>
+    <%- include ('./components/navbar.ejs') %>
   <div id="main_content_zone">
     <table>
         <tr>
@@ -17,8 +18,8 @@
         </tr>
         <%
             var itemTable=``; 
-            menu_items.forEach(item => {
-                itemTable += `<tr> <td> ${menu_items.item_id} </td> <td> ${menu_items.item_name} </td> <td> ${menu_items.price} </td> <td> <a href="/items/edit/${menu_items.item_id}"> EDIT </a> </td> <td> <a href="/items/delete/${menu_items.item_id}"> DELETE </a> </td> </tr>`
+            items.forEach(item => {
+                itemTable += `<tr> <td> ${item.item_id} </td> <td> ${item.item_name} </td> <td> ${item.price} </td> <td> <a href="/items/edit/${item.item_id}"> EDIT </a> </td> <td> <a href="/items/delete/${item.item_id}"> DELETE </a> </td> </tr>`
             });
         %>
         <%- itemTable %>

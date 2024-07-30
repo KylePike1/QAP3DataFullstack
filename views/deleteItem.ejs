@@ -6,8 +6,9 @@
     <title>Delete Item</title>
 </head>
 <body>
+    <%- include ('./components/navbar.ejs') %>
     <div id="main_content_zone">
-        <p>Are you sure you want to delete the Item "<%= menu_items.item_name %>" Item with ID of: <%= menu_items.item_id  %> </p>
+        <p>Are you sure you want to delete the Item "<%= item.item_name %>" Item with ID of: <%= item.item_id  %> </p>
         <form method="post">
             <input type = "submit" value="confirm?"></input>
         </form>
